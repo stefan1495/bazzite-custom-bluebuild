@@ -13,7 +13,7 @@ image-version: stable-41 # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
   - type: akmods
-    base: bazzite # if not specified, classic "main" base is used by default
+    base: bazzite-41-6.12.12-203.bazzite.fc41.x86_64 # if not specified, classic "main" base is used by default
     install:
       - nct6687d
 
