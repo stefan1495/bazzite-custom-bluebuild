@@ -7,21 +7,10 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-nvidia-open
-image-version: stable-41 # latest is also supported if you want new updates ASAP
+image-version: stable # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: copy
-    from: ghcr.io/ublue-os/akmods-extra:KERNEL_VERSION
-    src: /rpms/
-    dest: /tmp/rpms
-
-  - type: containerfile
-    snippets:
-      - RUN sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo
-      - RUN find /tmp/rpms
-      - RUN rpm-ostree install /tmp/rpms/kmods/*nct6687*.rpm
-
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - from-file: common-modules.yml
 
