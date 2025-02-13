@@ -33,15 +33,6 @@ modules:
     install:
       - code
 
-  # Brave Browser
-  - type: rpm-ostree
-    repos:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-    optfix:
-      - brave.com
-    install:
-      - brave-browser
-
   # Cooler Control
   - type: rpm-ostree
     repos:
@@ -54,7 +45,6 @@ modules:
   - type: rpm-ostree
     install:
       - zsh
-      - corectrl
 
   - type: systemd
     system:
