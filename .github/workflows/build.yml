@@ -42,6 +42,7 @@ jobs:
           echo "Extracted ostree.linux label: $kernel_version"
       - name: Modify file with extracted label
         run: |
+          ls -la
           sed -i "s/KERNEL_VERSION/$kernel_version/g" ./recipes/akmods-modules.yml
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
