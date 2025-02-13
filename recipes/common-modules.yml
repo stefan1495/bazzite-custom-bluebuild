@@ -1,0 +1,57 @@
+modules:
+  - type: signing
+
+  - type: files
+    files:
+      - source: system/common
+        destination: /
+
+  - from-file: akmods-modules.yml
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+
+  # Docker
+  - type: rpm-ostree
+    repos:
+      - https://download.docker.com/linux/fedora/docker-ce.repo
+    install:
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose-plugin
+      - docker-buildx-plugin
+      - containerd.io
+
+  # VS Code
+  - type: rpm-ostree
+    repos:
+      - vscode.repo
+    keys:
+      - https://packages.microsoft.com/keys/microsoft.asc
+    install:
+      - code
+
+  # Cooler Control
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-%OS_VERSION%/codifryed-CoolerControl-fedora-%OS_VERSION%.repo
+    install:
+      - coolercontrol
+      - liquidctl
+
+  # Misc
+  - type: rpm-ostree
+    install:
+      - zsh
+
+  - type: systemd
+    system:
+      enabled:
+        # Virtualization
+        - libvirtd.service
+        # Docker
+        - docker.service
+        - containerd.service
+        - coolercontrold.service
