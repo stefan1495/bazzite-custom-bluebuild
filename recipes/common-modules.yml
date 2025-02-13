@@ -43,9 +43,6 @@ modules:
 
   # Misc
   - type: rpm-ostree
-    repos:
-      - terra-extras.repo
-      - terra.repo
     install:
       - zsh
 
