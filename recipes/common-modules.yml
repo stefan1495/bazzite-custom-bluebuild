@@ -40,7 +40,7 @@ modules:
     keys:
       - https://downloads.1password.com/linux/keys/1password.asc
     optfix:
-      - 1password
+      - 1Password
     install:
       - 1password
 
