@@ -41,6 +41,11 @@ modules:
       - coolercontrol
       - liquidctl
 
+  # Gaming
+  - type: rpm-ostree
+    install:
+      - discord
+
   # Misc
   - type: rpm-ostree
     install:
