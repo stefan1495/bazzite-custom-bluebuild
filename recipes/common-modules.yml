@@ -45,6 +45,15 @@ modules:
   - type: rpm-ostree
     install:
       - discord
+    # remove broken discover-overlay which does not work with KDE
+    remove:
+      - discover-overlay
+  # Install Discover-Overlay via Flatpak instead
+  - type: default-flatpaks
+    notify: false 
+    system:
+      install:
+        - io.github.trigg.discover_overlay
 
   # Misc
   - type: rpm-ostree
