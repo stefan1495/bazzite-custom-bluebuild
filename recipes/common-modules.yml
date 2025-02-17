@@ -45,8 +45,6 @@ modules:
   - type: rpm-ostree
     install:
       - discord
-      # Wine is needed for some Lutris-Related Stuff
-      - wine
     # remove broken discover-overlay which does not work with KDE
     remove:
       - discover-overlay
