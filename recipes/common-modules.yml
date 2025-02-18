@@ -61,6 +61,7 @@ modules:
   - type: rpm-ostree
     install:
       - obs-studio
+      - obs-studio-plugin-vkcapture
 
   # Misc
   - type: rpm-ostree
