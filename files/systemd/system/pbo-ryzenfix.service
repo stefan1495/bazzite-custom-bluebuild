@@ -1,6 +1,6 @@
 [Unit]
 Description=Updates PBO for Ryzen CPU
 [Service]
-ExecStart=/usr/share/pbo-ryzenfix/pbo-ryzen.sh
+ExecStart=/usr/bin/bash /usr/share/pbo-ryzenfix/pbo-ryzen.sh
 [Install]
 WantedBy=multi-user.target
