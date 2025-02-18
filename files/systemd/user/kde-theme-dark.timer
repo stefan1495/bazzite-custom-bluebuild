@@ -1,0 +1,10 @@
+[Unit]
+Description="Set KDE Dark Theme at 6pm every day"
+
+[Timer]
+OnCalendar=*-*-* 18:00:00
+Persistent=true
+Unit=kde-theme-dark.service
+
+[Install]
+WantedBy=timers.target
