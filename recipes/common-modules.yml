@@ -6,7 +6,7 @@ modules:
       - source: system/common
         destination: /
       - source: ryzen-fix
-        destination: /usr/bin/pbo-ryzenfix
+        destination: /usr/share/pbo-ryzenfix/
 
   - from-file: akmods-modules.yml
 
