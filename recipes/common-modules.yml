@@ -5,6 +5,8 @@ modules:
     files:
       - source: system/common
         destination: /
+      - source: ryzen-fix
+        destination: /var/usrlocal/sbin
 
   - from-file: akmods-modules.yml
 
@@ -69,3 +71,5 @@ modules:
         - docker.service
         - containerd.service
         - coolercontrold.service
+        # Pbo Fix
+        - pbo-ryzenfix.service

@@ -1,0 +1,6 @@
+[Unit]
+Description=Updates PBO for Ryzen CPU
+[Service]
+ExecStart=/usr/local/sbin/pbo-ryzen.sh
+[Install]
+WantedBy=multi-user.target
