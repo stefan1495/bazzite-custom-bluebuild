@@ -7,4 +7,4 @@ Persistent=true
 Unit=kde-theme-dark.service
 
 [Install]
-WantedBy=timers.target
+WantedBy=graphical-session.target
