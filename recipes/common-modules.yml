@@ -57,11 +57,6 @@ modules:
       install:
         - io.github.trigg.discover_overlay
 
-  # Streaming
-  - type: rpm-ostree
-    install:
-      - obs-studio
-
   # Misc
   - type: rpm-ostree
     install:
