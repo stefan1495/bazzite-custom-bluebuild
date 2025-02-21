@@ -3,7 +3,4 @@ Description="Switch KDE to Light Theme"
 
 [Service]
 Type=oneshot
-Environment=DISPLAY=:0
-Environment=QT_DEBUG_PLUGINS=1
-Environment=LIBGL_ALWAYS_INDIRECT=
-ExecStart=/usr/bin/lookandfeeltool -a org.kde.breeze.desktop
+ExecStart=/usr/bin/plasma-apply-lookandfeel -a org.kde.breeze.desktop
