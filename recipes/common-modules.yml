@@ -61,6 +61,7 @@ modules:
   - type: rpm-ostree
     install:
       - zsh
+      - syncthing
 
   - type: systemd
     system:
