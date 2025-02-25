@@ -73,7 +73,3 @@ modules:
         - coolercontrold.service
         # Pbo Fix
         - pbo-ryzenfix.service
-    user:
-      enabled:
-        - kde-theme-dark.timer
-        - kde-theme-light.timer

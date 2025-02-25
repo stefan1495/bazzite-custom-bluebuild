@@ -1,6 +1,0 @@
-[Unit]
-Description="Switch KDE to Light Theme"
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/plasma-apply-lookandfeel -a org.kde.breeze.desktop
