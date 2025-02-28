@@ -14,6 +14,8 @@ modules:
     fonts:
       nerd-fonts:
         - FiraCode
+      google-fonts:
+        - Noto Color Emoji
 
   # Docker
   - type: rpm-ostree
