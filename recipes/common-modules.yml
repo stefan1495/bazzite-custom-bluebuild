@@ -8,8 +8,6 @@ modules:
       - source: ryzen-fix
         destination: /usr/share/pbo-ryzenfix/
 
-  - from-file: akmods-modules.yml
-
   - type: fonts
     fonts:
       nerd-fonts:
