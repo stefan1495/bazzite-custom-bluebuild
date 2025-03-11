@@ -45,8 +45,6 @@ modules:
 
   # Gaming
   - type: rpm-ostree
-    install:
-      - discord
     # remove broken discover-overlay which does not work with KDE
     remove:
       - discover-overlay
@@ -56,6 +54,7 @@ modules:
     system:
       install:
         - io.github.trigg.discover_overlay
+        - com.discordapp.Discord
 
   # Misc
   - type: rpm-ostree
