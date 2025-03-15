@@ -1,7 +1,0 @@
-[Unit]
-Description=Updates PBO for Ryzen CPU
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/python3 /usr/share/pbo-ryzenfix/ruv.py -c 8 -o -25
-[Install]
-WantedBy=multi-user.target

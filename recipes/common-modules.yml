@@ -5,8 +5,6 @@ modules:
     files:
       - source: system/common
         destination: /
-      - source: ryzen-fix
-        destination: /usr/share/pbo-ryzenfix/
 
   - type: fonts
     fonts:
@@ -54,6 +52,7 @@ modules:
     system:
       install:
         - io.github.trigg.discover_overlay
+        - com.discordapp.Discord
 
   # Misc
   - type: rpm-ostree
@@ -70,5 +69,3 @@ modules:
         - docker.service
         - containerd.service
         - coolercontrold.service
-        # Pbo Fix
-        - pbo-ryzenfix.service
