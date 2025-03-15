@@ -52,7 +52,6 @@ modules:
     system:
       install:
         - io.github.trigg.discover_overlay
-        - com.discordapp.Discord
 
   # Misc
   - type: rpm-ostree
