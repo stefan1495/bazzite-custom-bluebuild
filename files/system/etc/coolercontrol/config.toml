@@ -1,0 +1,195 @@
+# This is the CoolerControl configuration file.
+# Comments and most formatting is preserved.
+# Most of this file you can edit by hand, but it is recommended to stop the daemon when doing so.
+# -------------------------------
+
+
+# Unique ID Device List
+# -------------------------------
+# This is a simple UID and device name key-value pair, that is automatically generated at startup
+#  to help humans distinguish which UID belongs to which device in this config file.
+#  Only the device name is given here, complete Device information can be requested from the API.
+#  UIDs are generated sha256 hashes based on specific criteria to help determine device uniqueness.
+# ANY CHANGES WILL BE OVERWRITTEN.
+# Example:
+# 21091c4fb341ceab6236e8c9e905ccc263a4ac08134b036ed415925ba4c1645d = "Nvidia GPU"
+[devices]
+4962ceb9aeb47d98e800e0ae4b5acc8151f26b54cb4d8a98a488351d3650bb46 = "nvme1"
+19e098e312e1b1b39163a343ea22b6ea17f18ec1a803ffe0ce44f5bacd6076ee = "Custom Sensors"
+1dd38d78127f691d08d708e2b21d733e12db4abbd776f0c3cfe7c4bcaf80b57c = "nvme0"
+7a6b81b881647eebdaa5cf70e7de62e049fa54e0975b1b9156f985d4b8641499 = "NVIDIA GeForce RTX 4070 Ti SUPER"
+7bfee7e15e0af819a1c74ac2f088d69197bdae5f361d2af4da2960c931be3cc7 = "nct6687"
+3145e1a42801faf9cf948df8c705afb4859f084c10a7e7c5e4efecb1e0167127 = "AMD Ryzen 7 9800X3D 8-Core Processor"
+e8ddda7d467d949cac21c37c678a46ea7168d6648299b31ab27257fa2c970473 = "NVIDIA GeForce RTX 4070 Ti SUPER"
+62edcf1e2581548e98b6a8d63d15e717b63da08b27a24d36758ab17b115f2785 = "mt7921_phy0"
+bbb68205ed0676eb34f9a716553f180ef3078974595a39aacf71be51f7c983bf = "amdgpu"
+961547fb3857172fc22c5f76f1acf7f103bf2512c68dec92287a81c9814fd2c6 = "spd5118"
+d8a0d82688da79d4d5ae97535c0b13b6b64bd5a0353b53e2e9a7de8e5638b3c8 = "spd5118"
+f226946857a3141b80fefa0bae8de91cdba1c6eedf91d96ea7bef76ce88b4e90 = "ASUS Aura LED Controller"
+00a4da18625f56275c89e2fcd25a83c08c5ad3326452fa7e252fcc8a89c92493 = "nct6799"
+462a35f5b1729769c2c29189a815da27b38cec9af78f00473528930d07743004 = "amdgpu"
+279b9563a1ab94905260e66d05e0e1c4f14ba6c1c233f8d420d66955fa485da9 = "spd5118"
+4d1389a4795e4a40af6b4bb04d20fb56aebc6ea5081844fbf3855c3431f05270 = "spd5118"
+
+
+# Legacy690 Option for devices
+# -------------------------------
+# There are 2 Asetek 690LC liquid coolers that have the same device ID.
+#  To tell them apart we need user input to know which cooler we're actually dealing with.
+#  This is an assignment of liquidctl AseTek690LC device UIDs to true/false:
+#   true = Legacy690 Cooler aka NZXT Kraken X40, X60, X31, X41, X51 and X61
+#   false = Modern690 Cooler aka EVGA CLC 120 (CLC12), 240, 280 and 360
+# Example:
+# 21091c4fb341ceab6236e8c9e905ccc263a4ac08134b036ed415925ba4c1645d = true
+[legacy690]
+
+
+# Device Settings
+# -------------------------------
+# This is where CoolerControl will save device settings for the cooresponding device.
+# Settings can be set here also specifically by hand. (restart required for applying)
+# These settings are applied on startup and each is overwritten once a new setting
+# has been applied.
+# Example:
+# [device-settings.4b9cd1bc5fb2921253e6b7dd5b1b011086ea529d915a86b3560c236084452807]
+# pump = { speed_fixed = 30 }
+# logo = { lighting = { mode = "fixed", colors = [[0, 255, 255]] } }
+# ring = { lighting = { mode = "spectrum-wave", backward = true, colors = [] } }
+[device-settings]
+
+[device-settings.7bfee7e15e0af819a1c74ac2f088d69197bdae5f361d2af4da2960c931be3cc7]
+fan5 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan3 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan4 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan1 = { profile_uid = "a1c62594-f4a4-4776-9cb7-ec18448eef9d" }
+fan2 = { profile_uid = "a1c62594-f4a4-4776-9cb7-ec18448eef9d" }
+fan6 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan7 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan8 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+
+[device-settings.00a4da18625f56275c89e2fcd25a83c08c5ad3326452fa7e252fcc8a89c92493]
+fan3 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan1 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan2 = { profile_uid = "a1c62594-f4a4-4776-9cb7-ec18448eef9d" }
+fan4 = { profile_uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df" }
+fan6 = { speed_fixed = 69 }
+
+
+# A list of profiles to be used with each device's settings
+# -------------------------------
+[[profiles]]
+uid = "0"
+name = "Default Profile"
+p_type = "Default"
+function = "0"
+
+[[profiles]]
+uid = "0840dd7f-04cb-4c72-9303-4d78f0e92a55"
+name = "My Profile"
+p_type = "Default"
+speed_profile = []
+function_uid = "02ba5ea0-89cc-4085-808f-c3b1cc97963b"
+
+[[profiles]]
+uid = "dcdc0029-f5b7-4be0-aefa-822306d4e2df"
+name = "Lüfter Gehäuse"
+p_type = "Fixed"
+speed_fixed = 38
+speed_profile = []
+function_uid = "0"
+
+[[profiles]]
+uid = "a1c62594-f4a4-4776-9cb7-ec18448eef9d"
+name = "CPU Kurve"
+p_type = "Graph"
+speed_profile = [[0.0, 0], [39.6, 30], [70.1, 45], [85.8, 55], [100.0, 100]]
+temp_source = { temp_name = "temp1", device_uid = "3145e1a42801faf9cf948df8c705afb4859f084c10a7e7c5e4efecb1e0167127" }
+function_uid = "ea72324f-8096-4874-80b6-e02ddab57c02"
+
+[[profiles]]
+uid = "6778bba9-7f97-4fc0-9b82-e79953e73007"
+name = "New Profile"
+p_type = "Default"
+speed_profile = []
+function_uid = "0"
+
+# A list of functions to be applied to the various profiles
+# -------------------------------
+[[functions]]
+uid = "0"
+name = "Default Function"
+f_type = "Identity"
+
+[[functions]]
+uid = "02ba5ea0-89cc-4085-808f-c3b1cc97963b"
+name = "My Function"
+f_type = "Identity"
+duty_minimum = 2
+duty_maximum = 100
+
+[[functions]]
+uid = "ea72324f-8096-4874-80b6-e02ddab57c02"
+name = "CPU Curve Function"
+f_type = "Standard"
+duty_minimum = 2
+duty_maximum = 100
+response_delay = 3
+deviance = 2.0
+only_downward = false
+
+
+# Cooler Control Settings
+# -------------------------------
+# This is where CoolerControl specifc general and specifc device settings are set. These device
+# settings differ from the above Device Settings, in that they are applied to CoolerControl,
+# and not on the devices themselves. For ex. settings such as disabling/enabling a particular device.
+[settings]
+
+# whether to apply the saved device settings on daemon startup
+apply_on_boot = true
+
+# Whether to enable the integration with liquidctl.
+# Disabling this will prevent any communication with liquidctl,
+# and all HWMon supported devices will be shown.
+liquidctl_integration = true
+
+# There are some devices that are supported both by liquidctl and hwmon drivers. Normally the
+# preference is to use liquidctl as it supports more features such as RGB control. There are
+# some cases where the hwmon driver is preferred though. Note: Care should be taken to blacklist
+# one of the devices to avoid needlessly loading the device IO and avoid concurrency issues.
+# Use at your own risk.
+hide_duplicate_devices = true
+
+# Will skip initialization calls for liquidctl devices. ONLY USE if you are doing initialiation manually.
+no_init = false
+
+# Startup Delay (seconds) is an integer value between 0 and 10
+startup_delay = 2
+
+# Smoothing level (averaging) for temp and load values of CPU and GPU devices. (0-5)
+# This only affects the returned values from the /status endpoint, not internal values
+smoothing_level = 0
+
+# For ThinkPads, wheather to use the 'full-speed' option when settings the fan to 100%
+# This option drives the fan as fast as it can go, which might exceed hardware limits,
+# so use this level with caution.
+thinkpad_full_speed = false
+
+# API Address and Port:
+# The daemon by default uses port 11987 and the standard loopback IPv4 and IPv6 addresses.
+# You can set an IPv4, IPv6 or both addresses to listen on. An empty string will disable the address.
+# It is highly recommended to use the default settings unless you have a specific reason to change them
+# and understand the implications. The API is not secure and should not be exposed to a public network.
+# For more information see the project wiki.
+# Example:
+# port = 11987
+# ipv4_address = "127.0.0.1"
+# ipv6_address = "::1"
+
+# Whether to compress the response data from the API. This can reduce the size of the response
+# but will increase CPU usage. This is useful if you are running the API over a network.
+compress = false
+
+# CoolerControl Device settings Example:
+# [settings.4b9cd1bc5fb2921253e6b7dd5b1b011086ea529d915a86b3560c236084452807]
+# disabled = true
