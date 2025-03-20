@@ -32,6 +32,26 @@ modules:
       - https://packages.microsoft.com/keys/microsoft.asc
     install:
       - code
+  
+  # 1Password
+  - type: rpm-ostree
+    repos:
+      - 1password.repo
+    keys:
+      - https://downloads.1password.com/linux/keys/1password.asc
+    optfix:
+      - 1Password
+    install:
+      - 1password
+
+  # Brave Browser
+  - type: rpm-ostree
+    repos:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    optfix:
+      - brave.com
+    install:
+      - brave-browser
 
   # Cooler Control
   - type: rpm-ostree
