@@ -34,9 +34,9 @@ modules:
       - code
   
   # 1Password
-  - type: script
-    scripts:
-      - 1password.sh
+  - type: bling
+    install:
+        - 1password
 
   # Brave Browser
   - type: rpm-ostree
