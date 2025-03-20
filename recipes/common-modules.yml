@@ -34,15 +34,9 @@ modules:
       - code
   
   # 1Password
-  - type: rpm-ostree
-    repos:
-      - 1password.repo
-    keys:
-      - https://downloads.1password.com/linux/keys/1password.asc
-    optfix:
-      - 1Password
-    install:
-      - 1password
+  - type: script
+    scripts:
+      - 1password.sh
 
   # Brave Browser
   - type: rpm-ostree
