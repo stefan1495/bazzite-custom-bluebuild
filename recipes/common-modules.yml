@@ -59,5 +59,6 @@ modules:
   # Misc
   - type: rpm-ostree
     install:
+      - ulauncher
       - zsh
       - syncthing
