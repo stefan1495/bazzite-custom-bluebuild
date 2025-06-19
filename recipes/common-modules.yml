@@ -60,5 +60,6 @@ modules:
   - type: rpm-ostree
     install:
       - ulauncher
+      - libation
       - zsh
       - syncthing
