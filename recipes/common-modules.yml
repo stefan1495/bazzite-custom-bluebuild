@@ -60,6 +60,6 @@ modules:
   - type: rpm-ostree
     install:
       - ulauncher
-      - libation
+      - https://github.com/rmcrackan/Libation/releases/download/v12.4.4/Libation.12.4.4-linux-chardonnay-amd64.rpm
       - zsh
       - syncthing
