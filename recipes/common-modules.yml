@@ -45,10 +45,6 @@ modules:
       - liquidctl
 
   # Gaming
-  - type: rpm-ostree
-    # remove broken discover-overlay which does not work with KDE
-    remove:
-      - discover-overlay
   # Install Discover-Overlay via Flatpak instead
   - type: default-flatpaks
     notify: false 
