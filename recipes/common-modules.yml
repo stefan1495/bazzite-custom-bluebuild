@@ -13,15 +13,6 @@ modules:
       google-fonts:
         - Noto Color Emoji
 
-  # VS Code
-  - type: rpm-ostree
-    repos:
-      - vscode.repo
-    keys:
-      - https://packages.microsoft.com/keys/microsoft.asc
-    install:
-      - code
-  
   # 1Password
   - type: bling
     install:
@@ -57,6 +48,4 @@ modules:
     install:
       - ulauncher
       - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
-      - https://github.com/rmcrackan/Libation/releases/download/v12.4.5/Libation.12.4.5-linux-chardonnay-amd64.rpm
-      - zsh
       - syncthing
