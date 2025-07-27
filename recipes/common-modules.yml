@@ -38,8 +38,9 @@ modules:
   # Gaming
   # Install Discover-Overlay via Flatpak instead
   - type: default-flatpaks
-    notify: false 
-    system:
+    configurations:
+    - notify: false
+      scope: system
       install:
         - io.github.trigg.discover_overlay
 
