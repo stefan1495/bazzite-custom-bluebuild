@@ -51,10 +51,3 @@ modules:
     install:
       - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
       - syncthing
-  - type: dnf
-    repos:
-      copr:
-        - agonie/vicinae
-    install:
-      packages:
-        - vicinae
