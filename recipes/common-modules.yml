@@ -26,6 +26,7 @@ modules:
       - brave.com
     install:
       - brave-browser
+      - librewolf
 
   # Cooler Control
   - type: rpm-ostree
