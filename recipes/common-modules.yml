@@ -49,6 +49,12 @@ modules:
   # Misc
   - type: rpm-ostree
     install:
-      - ulauncher
       - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
       - syncthing
+  - type: dnf
+    repos:
+      copr:
+        - gvalkov/vicinae
+    install:
+      packages:
+        - vicinae
