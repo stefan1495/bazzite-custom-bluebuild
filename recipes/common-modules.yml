@@ -54,7 +54,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        - gvalkov/vicinae
+        - agonie/vicinae
     install:
       packages:
         - vicinae
