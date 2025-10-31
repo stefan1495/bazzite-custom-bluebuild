@@ -21,12 +21,8 @@ modules:
   # Browsers
   - type: rpm-ostree
     repos:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
       - https://repo.librewolf.net/librewolf.repo
-    optfix:
-      - brave.com
     install:
-      - brave-browser
       - librewolf
 
   # Cooler Control
