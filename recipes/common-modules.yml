@@ -35,8 +35,10 @@ modules:
 
   # 3d-Printing Software
   - type: dnf
-    copr:
-      - serghei/freecad
+    repos:
+      cleanup: true
+      copr:
+        - serghei/freecad
     install:
       packages:
         - freecad
