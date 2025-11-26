@@ -33,6 +33,13 @@ modules:
       - coolercontrol
       - liquidctl
 
+  # 3d-Printing Software
+  - type: dnf
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/serghei/freecad/repo/fedora-%OS_VERSION%/serghei-freecad-fedora-%OS_VERSION%.repo
+    install:
+      - FreeCAD
+
   # Gaming
   # Install Discover-Overlay via Flatpak instead
   - type: default-flatpaks
