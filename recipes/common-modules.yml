@@ -35,10 +35,11 @@ modules:
 
   # 3d-Printing Software
   - type: dnf
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/serghei/freecad/repo/fedora-%OS_VERSION%/serghei-freecad-fedora-%OS_VERSION%.repo
+    copr:
+      - serghei/freecad
     install:
-      - FreeCAD
+      packages:
+        - freecad
 
   # Gaming
   # Install Discover-Overlay via Flatpak instead
