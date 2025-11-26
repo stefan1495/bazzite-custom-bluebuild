@@ -33,16 +33,6 @@ modules:
       - coolercontrol
       - liquidctl
 
-  # 3d-Printing Software
-  - type: dnf
-    repos:
-      cleanup: true
-      copr:
-        - serghei/freecad
-    install:
-      packages:
-        - freecad
-
   # Gaming
   # Install Discover-Overlay via Flatpak instead
   - type: default-flatpaks
