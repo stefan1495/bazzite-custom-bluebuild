@@ -1,11 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["^recipes/common-modules\\.yml$"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^recipes/common-modules\\.yml$/"
+      ],
       "matchStrings": [
         "https://github\\.com/timmo001/system-bridge/releases/download/(?<currentValue>.*?)/system-bridge-.*\\.rpm"
       ],
