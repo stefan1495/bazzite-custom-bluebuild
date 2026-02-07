@@ -46,4 +46,5 @@ modules:
   - type: rpm-ostree
     install:
       - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
+      - https://github.com/timmo001/system-bridge/releases/download/5.4.0/system-bridge-5.4.0-1.x86_64.rpm
       - syncthing
