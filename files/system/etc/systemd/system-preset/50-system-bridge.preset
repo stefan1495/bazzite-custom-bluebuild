@@ -1,2 +1,0 @@
-# Enable system-bridge service by default
-enable system-bridge.service

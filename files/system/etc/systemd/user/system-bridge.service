@@ -10,7 +10,5 @@ RestartSec=5
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=system-bridge
-Environment="HOME=/root"
-
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
