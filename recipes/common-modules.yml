@@ -45,14 +45,15 @@ modules:
         - io.github.trigg.discover_overlay
 
   # Dev Tools
-  # VS Code
   - type: rpm-ostree
     repos:
       - vscode.repo
+      - https://copr.fedorainfracloud.org/coprs/scottames/ghostty/repo/fedora-%OS_VERSION%/scottames-ghostty-fedora-%OS_VERSION%.repo
     keys:
       - https://packages.microsoft.com/keys/microsoft.asc
     install:
       - code-insiders
+      - ghostty
 
   # Misc
   - type: rpm-ostree
