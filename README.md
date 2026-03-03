@@ -30,6 +30,13 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
+## Package Update Notes
+
+- **Proton Pass** is pinned to a versioned RPM URL in [recipes/common-modules.yml](recipes/common-modules.yml) and managed by Renovate using custom datasource and regex manager configurations defined in [renovate.json](renovate.json).
+- Renovate reads Proton's metadata endpoint (`https://proton.me/download/PassDesktop/linux/x64/version.json`), filters for `Stable` releases, extracts matching RPM URLs from the `File[].Url` array, and extracts the version token using a regex pattern.
+- The version pattern captures the full RPM segment (major.minor.patch-build.x86_64, e.g., `1.34.2-1.x86_64`), allowing Renovate to track suffix changes without hardcoding build numbers.
+- When a new version is detected, Renovate opens a PR updating the full URL in the rpm-ostree module, enabling deterministic, automated version management.
+
 ## ISO
 
 If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
