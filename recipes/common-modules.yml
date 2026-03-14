@@ -13,11 +13,6 @@ modules:
       google-fonts:
         - Noto Color Emoji
 
-  # 1Password
-  - type: bling
-    install:
-        - 1password
-
   # Browsers
   - type: rpm-ostree
     repos:
