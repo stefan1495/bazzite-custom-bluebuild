@@ -6,6 +6,11 @@ modules:
       - source: system
         destination: /
 
+  - type: systemd
+    system:
+      enabled:
+        - sendspin.service
+
   - type: fonts
     fonts:
       nerd-fonts:

@@ -1,0 +1,22 @@
+[Unit]
+Description=Sendspin Multi-Room Audio Client
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=stefanspangel
+Environment=PATH=/var/home/stefanspangel/.local/bin:/home/stefanspangel/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecCondition=/usr/bin/bash -lc 'command -v sendspin >/dev/null 2>&1'
+ExecStart=/usr/bin/bash -lc 'export XDG_RUNTIME_DIR="/run/user/$(id -u)"; exec sendspin daemon'
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+SupplementaryGroups=audio
+
+[Install]
+WantedBy=multi-user.target
