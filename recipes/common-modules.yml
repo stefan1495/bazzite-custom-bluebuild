@@ -6,6 +6,11 @@ modules:
       - source: system
         destination: /
 
+  - type: os-release
+    properties:
+      NAME: CleavOS
+      PRETTY_NAME: CleavOS
+
   - type: systemd
     system:
       enabled:
