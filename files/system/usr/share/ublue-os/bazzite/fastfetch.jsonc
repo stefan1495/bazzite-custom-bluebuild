@@ -3,7 +3,7 @@
     "logo": {
         "type": "file-raw",
         "source": "/usr/share/fastfetch/logos/gopher.ansi",
-        "width": 32
+        "width": 56
     },
     "display": {
         "separator": "  ",
