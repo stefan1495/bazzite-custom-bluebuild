@@ -69,3 +69,8 @@ modules:
       - https://github.com/timmo001/system-bridge/releases/download/5.4.4/system-bridge-5.4.4-1.x86_64.rpm
       - https://github.com/music-assistant/desktop-app/releases/download/0.3.6/Music.Assistant-0.3.6-1.x86_64.rpm
       - syncthing
+
+  # SELinux
+  - type: script
+    scripts:
+      - files/scripts/selinux-sendspin.sh
