@@ -32,17 +32,6 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "timmo001/system-bridge"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/^recipes/common-modules\\.yml$/"
-      ],
-      "matchStrings": [
-        "https://github\\.com/music-assistant/desktop-app/releases/download/(?<currentValue>.*?)/Music\\.Assistant-.*\\.x86_64\\.rpm"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "music-assistant/desktop-app"
     }
   ]
 }
