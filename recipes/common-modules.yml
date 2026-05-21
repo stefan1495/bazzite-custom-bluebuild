@@ -62,6 +62,7 @@ modules:
       - https://packages.microsoft.com/keys/microsoft.asc
     install:
       - code
+      - code-insiders
       - ghostty
       - docker-ce
       - docker-ce-cli
