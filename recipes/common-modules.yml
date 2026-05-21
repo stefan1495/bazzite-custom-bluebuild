@@ -70,6 +70,7 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - podman
+      - zsh
 
   # Misc
   - type: rpm-ostree
