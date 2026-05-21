@@ -15,6 +15,8 @@ modules:
     system:
       enabled:
         - sendspin.service
+        - docker.socket
+        - podman.socket
 
   - type: fonts
     fonts:
@@ -54,11 +56,17 @@ modules:
     repos:
       - vscode.repo
       - https://copr.fedorainfracloud.org/coprs/scottames/ghostty/repo/fedora-%OS_VERSION%/scottames-ghostty-fedora-%OS_VERSION%.repo
+      - https://download.docker.com/linux/fedora/docker-ce.repo
     keys:
       - https://packages.microsoft.com/keys/microsoft.asc
     install:
-      - code-insiders
+      - code
       - ghostty
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
 
   # Misc
   - type: rpm-ostree
