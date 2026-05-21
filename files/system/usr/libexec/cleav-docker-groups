@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# First-boot: ensure docker group exists and all wheel users are members.
+set -euo pipefail
+
+STATE_FILE=/etc/cleav/docker-groups-done
+
+[[ -f "$STATE_FILE" ]] && exit 0
+
+# Ensure docker group exists in /etc/group
+if ! getent group docker &>/dev/null; then
+    groupadd --system docker
+fi
+
+# Add every member of the wheel group to the docker group
+while IFS=: read -r username _ uid _; do
+    [[ "$uid" -lt 1000 ]] && continue
+    if id -nG "$username" 2>/dev/null | grep -qw wheel; then
+        usermod -aG docker "$username"
+    fi
+done < /etc/passwd
+
+mkdir -p /etc/cleav
+touch "$STATE_FILE"

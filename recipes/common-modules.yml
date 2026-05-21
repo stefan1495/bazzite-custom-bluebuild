@@ -17,6 +17,7 @@ modules:
         - sendspin.service
         - docker.socket
         - podman.socket
+        - cleav-docker-groups.service
 
   - type: fonts
     fonts:
@@ -67,6 +68,7 @@ modules:
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
+      - podman
 
   # Misc
   - type: rpm-ostree
