@@ -11,14 +11,6 @@ modules:
       NAME: CleavOS
       PRETTY_NAME: CleavOS
 
-  - type: systemd
-    system:
-      enabled:
-        - sendspin.service
-        - docker.socket
-        - podman.socket
-        - cleav-docker-groups.service
-
   - type: fonts
     fonts:
       nerd-fonts:
@@ -71,6 +63,14 @@ modules:
       - docker-compose-plugin
       - podman
       - zsh
+
+  - type: systemd
+    system:
+      enabled:
+        - sendspin.service
+        - docker.socket
+        - podman.socket
+        - cleav-docker-groups.service
 
   # Misc
   - type: rpm-ostree
