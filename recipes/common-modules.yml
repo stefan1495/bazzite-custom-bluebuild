@@ -32,8 +32,7 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-%OS_VERSION%/codifryed-CoolerControl-fedora-%OS_VERSION%.repo
     install:
-      # Direct RPM URL to pin version 4.3.0
-      - https://download.copr.fedorainfracloud.org/results/codifryed/CoolerControl/fedora-44-x86_64/10442210-coolercontrol/coolercontrol-4.3.0-1.fc44.x86_64.rpm
+      - coolercontrol
       - liquidctl
 
   # Gaming
