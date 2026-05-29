@@ -32,7 +32,7 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-%OS_VERSION%/codifryed-CoolerControl-fedora-%OS_VERSION%.repo
     install:
-      - coolercontrol-4.3.0
+      - coolercontrol-4.3.0-1.fc44.x86_64
       - liquidctl
 
   # Gaming
