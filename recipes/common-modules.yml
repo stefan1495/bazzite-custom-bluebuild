@@ -43,6 +43,7 @@ modules:
       scope: system
       install:
         - io.github.trigg.discover_overlay
+        - com.orcaslicer.OrcaSlicer
 
   # Dev Tools
   - type: rpm-ostree
