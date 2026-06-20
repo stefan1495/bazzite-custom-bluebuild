@@ -45,6 +45,12 @@ modules:
         - io.github.trigg.discover_overlay
         - com.orcaslicer.OrcaSlicer
 
+  # Communication
+  - type: rpm-ostree
+    install:
+      # renovate: datasource=custom.discord depName=discord versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
+      - https://stable.dl2.discordapp.net/apps/linux/1.0.143/discord-1.0.143.rpm
+
   # Dev Tools
   - type: rpm-ostree
     repos:
