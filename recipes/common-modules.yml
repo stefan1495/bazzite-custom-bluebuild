@@ -83,7 +83,7 @@ modules:
     install:
       - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
       # renovate: datasource=custom.proton-pass depName=proton-pass versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)-(?<build>\d+)\.x86_64$
-      - https://proton.me/download/pass/linux/proton-pass-1.38.0-1.x86_64.rpm
+      - https://proton.me/download/pass/linux/proton-pass-1.38.1-1.x86_64.rpm
       - https://github.com/timmo001/system-bridge/releases/download/5.6.1/system-bridge-5.6.1-1.x86_64.rpm
       - autofs
       - syncthing
