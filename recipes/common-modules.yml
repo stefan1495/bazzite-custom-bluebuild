@@ -21,10 +21,8 @@ modules:
   # Browsers
   - type: rpm-ostree
     repos:
-      - https://repo.librewolf.net/librewolf.repo
       - https://copr.fedorainfracloud.org/coprs/sneexy/zen-browser/repo/fedora-%OS_VERSION%/sneexy-zen-browser-fedora-%OS_VERSION%.repo
     install:
-      - librewolf
       - zen-browser
 
   # Cooler Control
