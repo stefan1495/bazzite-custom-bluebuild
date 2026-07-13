@@ -75,6 +75,9 @@ modules:
         - docker.socket
         - podman.socket
         - cleav-docker-groups.service
+    user:
+      enabled:
+        - cleav-default-web-browser.service
 
   # Misc
   - type: rpm-ostree
