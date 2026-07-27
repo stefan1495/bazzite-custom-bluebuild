@@ -18,13 +18,6 @@ modules:
       google-fonts:
         - Noto Color Emoji
 
-  # Browsers
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/sneexy/zen-browser/repo/fedora-%OS_VERSION%/sneexy-zen-browser-fedora-%OS_VERSION%.repo
-    install:
-      - zen-browser
-
   # Cooler Control
   - type: rpm-ostree
     repos:
@@ -33,13 +26,13 @@ modules:
       - coolercontrol
       - liquidctl
 
-  # Gaming
-  # Install Discover-Overlay via Flatpak instead
+  # Preinstalled Flatpaks
   - type: default-flatpaks
     configurations:
     - notify: false
       scope: system
       install:
+        - one.ablaze.floorp
         - io.github.trigg.discover_overlay
         - com.orcaslicer.OrcaSlicer
 

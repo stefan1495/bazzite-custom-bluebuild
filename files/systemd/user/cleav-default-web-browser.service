@@ -4,7 +4,7 @@ After=graphical-session.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/xdg-settings set default-web-browser zen-browser.desktop
+ExecStart=/usr/bin/xdg-settings set default-web-browser one.ablaze.floorp.desktop
 RemainAfterExit=yes
 
 [Install]
