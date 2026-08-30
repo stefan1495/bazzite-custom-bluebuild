@@ -35,6 +35,7 @@ modules:
         - one.ablaze.floorp
         - io.github.trigg.discover_overlay
         - com.orcaslicer.OrcaSlicer
+        - me.amankhanna.opendeck
 
   # Communication
   - type: rpm-ostree
