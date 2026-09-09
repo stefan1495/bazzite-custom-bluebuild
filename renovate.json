@@ -39,6 +39,17 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "timmo001/system-bridge"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^recipes/common-modules\\.yml$/"
+      ],
+      "matchStrings": [
+        "https://github\\.com/stablyai/orca/releases/download/(?<currentValue>.*?)/orca-ide-.*\\.rpm"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "stablyai/orca"
     }
   ]
 }
