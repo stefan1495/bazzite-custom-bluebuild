@@ -2,7 +2,7 @@
 
 set -oue pipefail
 
-install_dir=/var/lib/OpenLinkHub
+install_dir=/usr/lib/OpenLinkHub
 tmp_dir=$(mktemp -d)
 archive="$tmp_dir/OpenLinkHub.tar.gz"
 

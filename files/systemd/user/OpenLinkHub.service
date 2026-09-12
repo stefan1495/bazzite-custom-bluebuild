@@ -5,8 +5,8 @@ StartLimitIntervalSec=60
 StartLimitBurst=5
 
 [Service]
-WorkingDirectory=/var/lib/OpenLinkHub
-ExecStart=/var/lib/OpenLinkHub/OpenLinkHub
+WorkingDirectory=/usr/lib/OpenLinkHub
+ExecStart=/usr/lib/OpenLinkHub/OpenLinkHub
 ExecReload=/bin/kill -s HUP $MAINPID
 RestartSec=5
 Restart=always
