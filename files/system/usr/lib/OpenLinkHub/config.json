@@ -15,6 +15,7 @@
   "memorySku": "",
   "logFile": "",
   "logLevel": "info",
+  "checkDevicePermission": false,
   "enhancementKits": [],
   "temperatureOffset": 0,
   "amdGpuIndex": 0,
@@ -24,7 +25,10 @@
   "ramTempViaHwmon": false,
   "nvidiaGpuIndex": [0],
   "defaultNvidiaGPU": 0,
+  "openRGBPort": 6743,
+  "enableOpenRGBTargetServer": false,
   "enableGamepad": true,
   "enableMotherboard": false,
-  "motherboardBiosOnExit": false
+  "motherboardBiosOnExit": false,
+  "memoryRegisterOverride": []
 }
