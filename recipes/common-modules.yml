@@ -41,6 +41,7 @@ modules:
   - type: rpm-ostree
     install:
       - https://discord.com/api/download?platform=linux&format=rpm
+      - https://vencord.dev/download/vesktop/amd64/rpm
 
   # Dev Tools
   - type: rpm-ostree
