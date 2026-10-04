@@ -79,7 +79,7 @@ modules:
     install:
       - https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm
       - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
-      - https://github.com/stablyai/orca/releases/download/v1.4.219/orca-ide-1.4.219.x86_64.rpm
+      - https://github.com/stablyai/orca/releases/download/v1.4.220/orca-ide-1.4.220.x86_64.rpm
       # renovate: datasource=custom.proton-pass depName=proton-pass versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)-(?<build>\d+)\.x86_64$
       - https://proton.me/download/pass/linux/proton-pass-1.41.1-1.x86_64.rpm
       - https://github.com/timmo001/system-bridge/releases/download/5.9.4/system-bridge-5.9.4-1.x86_64.rpm
