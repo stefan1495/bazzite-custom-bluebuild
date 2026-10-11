@@ -82,6 +82,6 @@ modules:
       - https://github.com/stablyai/orca/releases/download/v1.4.224/orca-ide-1.4.224.x86_64.rpm
       # renovate: datasource=custom.proton-pass depName=proton-pass versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)-(?<build>\d+)\.x86_64$
       - https://proton.me/download/pass/linux/proton-pass-1.42.0-1.x86_64.rpm
-      - https://github.com/timmo001/system-bridge/releases/download/5.12.1/system-bridge-5.12.1-1.x86_64.rpm
+      - https://github.com/timmo001/system-bridge/releases/download/5.12.2/system-bridge-5.12.2-1.x86_64.rpm
       - autofs
       - syncthing
