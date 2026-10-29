@@ -16,7 +16,7 @@ concurrency:
 jobs:
   bluebuild:
     name: Build Custom Image
-    runs-on: ubuntu-latest
+    runs-on: unraid
     permissions:
       contents: read
       packages: write
