@@ -24,7 +24,7 @@ jobs:
       contents: read
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Parse workflow and recipe YAML
         run: |
           ruby -e 'require "yaml"; ARGV.each { |file| YAML.load_file(file, aliases: true); puts "Valid YAML: #{file}" }' \
