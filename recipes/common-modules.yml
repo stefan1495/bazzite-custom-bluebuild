@@ -19,12 +19,15 @@ modules:
         - Noto Color Emoji
 
   # Cooler Control
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-%OS_VERSION%/codifryed-CoolerControl-fedora-%OS_VERSION%.repo
+      copr:
+        - codifryed/CoolerControl
+      cleanup: true
     install:
-      - coolercontrol
-      - liquidctl
+      packages:
+        - coolercontrol
+        - liquidctl
 
   # Preinstalled Flatpaks
   - type: default-flatpaks
@@ -38,30 +41,35 @@ modules:
         - me.amankhanna.opendeck
 
   # Communication
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - https://discord.com/api/download?platform=linux&format=rpm
-      - https://vencord.dev/download/vesktop/amd64/rpm
+      packages:
+        - https://discord.com/api/download?platform=linux&format=rpm
+        - https://vencord.dev/download/vesktop/amd64/rpm
 
   # Dev Tools
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - vscode.repo
-      - https://copr.fedorainfracloud.org/coprs/scottames/ghostty/repo/fedora-%OS_VERSION%/scottames-ghostty-fedora-%OS_VERSION%.repo
-      - https://download.docker.com/linux/fedora/docker-ce.repo
-    keys:
-      - https://packages.microsoft.com/keys/microsoft.asc
+      files:
+        - vscode.repo
+        - https://download.docker.com/linux/fedora/docker-ce.repo
+      copr:
+        - scottames/ghostty
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
+      cleanup: true
     install:
-      - code
-      - code-insiders
-      - ghostty
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
-      - docker-compose-plugin
-      - podman
-      - zsh
+      packages:
+        - code
+        - code-insiders
+        - ghostty
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        - podman
+        - zsh
 
   - type: systemd
     system:
@@ -75,13 +83,14 @@ modules:
         - cleav-default-web-browser.service
 
   # Misc
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm
-      - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
-      - https://github.com/stablyai/orca/releases/download/v1.4.247/orca-ide-1.4.247.x86_64.rpm
-      # renovate: datasource=custom.proton-pass depName=proton-pass versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)-(?<build>\d+)\.x86_64$
-      - https://proton.me/download/pass/linux/proton-pass-1.43.0-1.x86_64.rpm
-      - https://github.com/timmo001/system-bridge/releases/download/5.9.5/system-bridge-5.9.5-1.x86_64.rpm
-      - autofs
-      - syncthing
+      packages:
+        - https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm
+        - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
+        - https://github.com/stablyai/orca/releases/download/v1.4.247/orca-ide-1.4.247.x86_64.rpm
+        # renovate: datasource=custom.proton-pass depName=proton-pass versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)-(?<build>\d+)\.x86_64$
+        - https://proton.me/download/pass/linux/proton-pass-1.43.0-1.x86_64.rpm
+        - https://github.com/timmo001/system-bridge/releases/download/5.9.5/system-bridge-5.9.5-1.x86_64.rpm
+        - autofs
+        - syncthing
