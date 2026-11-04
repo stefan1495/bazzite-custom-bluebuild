@@ -24,7 +24,7 @@ jobs:
   validate:
     name: Lint and validate (no image build)
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-26.04
+    runs-on: unraid
     permissions:
       contents: read
     steps:
@@ -58,7 +58,7 @@ jobs:
   build_push:
     name: Build and push image
     if: github.event_name != 'pull_request'
-    runs-on: ubuntu-26.04
+    runs-on: unraid
 
     permissions:
       contents: read
