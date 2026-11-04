@@ -21,8 +21,43 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    name: Lint and validate (no image build)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Install just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
+
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends --yes shellcheck
+
+      - name: Check Justfile and shell scripts
+        run: |
+          just check
+          just lint
+          for script in build_files/build.sh build_files/scripts/*.sh; do
+            bash -n "$script"
+          done
+
+      - name: Validate workflow and Renovate configuration
+        run: |
+          ruby -e 'require "yaml"; YAML.load_file(".github/workflows/build.yml", aliases: true)'
+          python3 -m json.tool renovate.json >/dev/null
+
+      - name: Parse Containerfile context without building the image
+        run: podman build --target ctx --tag cleav-os-validation-context --file Containerfile .
+
   build_push:
     name: Build and push image
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-26.04
 
     permissions:

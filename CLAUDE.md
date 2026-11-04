@@ -42,4 +42,4 @@ Do not publish, rebase a daily-use installation, or change remote state as part 
 - Direct RPM URLs should be reviewed for architecture, update strategy, and signature verification. Avoid placing secrets in the build context or logs.
 - Validate shell syntax for each helper (`for f in build_files/build.sh build_files/scripts/*.sh; do bash -n "$f"; done`), Just syntax (`just check`), workflow YAML, Renovate JSON, and a local image build before publishing.
 
-The workflow runs daily at 06:17 UTC, on pushes to `main`, and on manual dispatch. Pull-request builds do not publish production tags.
+The workflow builds and publishes daily at 06:17 UTC, on pushes to `main`, and on manual dispatch. Pull requests run lint and configuration checks only; they do not build or publish the OS image.

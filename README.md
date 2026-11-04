@@ -2,7 +2,7 @@
 
 CleavOS is a custom Bazzite NVIDIA Open image built with the Containerfile-based [`ublue-os/image-template`](https://github.com/ublue-os/image-template) structure. The template revision used for this migration is `72e9b7c2fc9bf5a1ba642f99b6d12d7e70de96d9`.
 
-The image is published as `ghcr.io/stefan1495/cleav-os:latest`. Builds run daily at 06:17 UTC and on pushes to `main`; pull requests build and validate without publishing production tags. Manual workflow dispatch is also available.
+The image is published as `ghcr.io/stefan1495/cleav-os:latest`. Builds run daily at 06:17 UTC, on pushes to `main`, and on manual dispatch. Pull requests run linting and configuration checks only; they do not build or publish the OS image.
 
 ## Installation
 
