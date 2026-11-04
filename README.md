@@ -1,49 +1,42 @@
-# bazzite-custom-bluebuild &nbsp; [![bluebuild build badge](https://github.com/stefan1495/bazzite-custom-bluebuild/actions/workflows/build.yml/badge.svg)](https://github.com/stefan1495/bazzite-custom-bluebuild/actions/workflows/build.yml)
+# CleavOS
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+CleavOS is a custom Bazzite NVIDIA Open image built with the Containerfile-based [`ublue-os/image-template`](https://github.com/ublue-os/image-template) structure. The template revision used for this migration is `72e9b7c2fc9bf5a1ba642f99b6d12d7e70de96d9`.
 
-After setup, it is recommended you update this README to describe your custom image.
+The image is published as `ghcr.io/stefan1495/cleav-os:latest`. Builds run daily at 06:17 UTC and on pushes to `main`; pull requests build and validate without publishing production tags. Manual workflow dispatch is also available.
 
 ## Installation
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> [!WARNING]
+> Rebasing an operating system image can make a system unbootable. Test on a disposable system first and keep a rollback path.
 
-To rebase an existing atomic Fedora installation to the latest build:
+Rebase to the unsigned image to install its signing policy, then reboot:
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/stefan1495/cleav-os:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/stefan1495/cleav-os:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
+```bash
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/stefan1495/cleav-os:latest
+systemctl reboot
+```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+After reboot, rebase to the signed image and reboot again:
 
-## Package Update Notes
+```bash
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/stefan1495/cleav-os:latest
+systemctl reboot
+```
 
-- **Proton Pass** is pinned to a versioned RPM URL in [recipes/common-modules.yml](recipes/common-modules.yml) and managed by Renovate using custom datasource and regex manager configurations defined in [renovate.json](renovate.json).
-- Renovate reads Proton's metadata endpoint (`https://proton.me/download/PassDesktop/linux/x64/version.json`), filters for `Stable` releases, extracts matching RPM URLs from the `File[].Url` array, and extracts the version token using a regex pattern.
-- The version pattern captures the full RPM segment (major.minor.patch-build.x86_64, e.g., `1.34.2-1.x86_64`), allowing Renovate to track suffix changes without hardcoding build numbers.
-- When a new version is detected, Renovate opens a PR updating the full URL in the rpm-ostree module, enabling deterministic, automated version management.
+## Image contents
 
-## ISO
+The image runs numbered build steps under [`build_files/scripts/`](build_files/scripts/), carries system configuration from [`system_files/`](system_files/), and installs these system Flatpaks after boot when networking is available:
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+- `one.ablaze.floorp`
+- `io.github.trigg.discover_overlay`
+- `com.orcaslicer.OrcaSlicer`
+- `me.amankhanna.opendeck`
+
+Proton Pass, Orca IDE, and System Bridge RPM versions are managed by Renovate in `build_files/scripts/30-install-packages.sh`, using the custom managers in [`renovate.json`](renovate.json).
 
 ## Verification
 
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
+Images are signed with Sigstore Cosign. Verify a published image using the public key in this repository:
 
 ```bash
 cosign verify --key cosign.pub ghcr.io/stefan1495/cleav-os
