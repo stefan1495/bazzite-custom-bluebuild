@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+dnf5 config-manager enable terra
 dnf5 -y install terra-release terra-gpg-keys
 dnf5 -y copr enable scottames/ghostty
 dnf5 config-manager addrepo --from-repofile=/ctx/vscode.repo
