@@ -120,13 +120,6 @@ jobs:
           df -i "$graphroot" "$GITHUB_WORKSPACE"
           podman system df
 
-      - name: Rechunk with Chunkah
-        id: rechunk
-        run: |
-          just rechunk \
-            "${IMAGE_NAME}" \
-            "${DEFAULT_TAG}"
-
       - name: Generate Build Tags
         id: gen-build-tags
         run: |
