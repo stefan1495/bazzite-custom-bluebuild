@@ -11,7 +11,7 @@ dnf5 -y install \
   https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm \
   https://github.com/stablyai/orca/releases/download/v1.4.247/orca-ide-1.4.247.x86_64.rpm \
   "$PROTON_PASS_URL" \
-  https://github.com/timmo001/system-bridge/releases/download/5.9.5/system-bridge-5.9.5-1.x86_64.rpm \
+  /run/system-bridge.rpm \
   coolercontrol liquidctl code code-insiders ghostty docker-ce docker-ce-cli \
   containerd.io docker-buildx-plugin docker-compose-plugin podman zsh autofs syncthing \
   google-noto-emoji-color-fonts
