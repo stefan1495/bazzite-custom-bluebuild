@@ -112,6 +112,14 @@ jobs:
       - name: Prune build leftovers before rechunking
         run: podman system prune --build --force
 
+      - name: Snapshot disk space after prune
+        run: |
+          graphroot="$(podman info --format '{{.Store.GraphRoot}}')"
+          printf 'Podman graphroot: %s\nWorkspace: %s\n' "$graphroot" "$GITHUB_WORKSPACE"
+          df -h "$graphroot" "$GITHUB_WORKSPACE"
+          df -i "$graphroot" "$GITHUB_WORKSPACE"
+          podman system df
+
       - name: Rechunk with Chunkah
         id: rechunk
         run: |
