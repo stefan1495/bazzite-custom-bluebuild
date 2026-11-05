@@ -109,6 +109,9 @@ jobs:
             ${IMAGE_NAME} \
             ${DEFAULT_TAG}
 
+      - name: Prune build leftovers before rechunking
+        run: podman system prune --build --force
+
       - name: Rechunk with Chunkah
         id: rechunk
         run: |
