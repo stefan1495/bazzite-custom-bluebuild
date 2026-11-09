@@ -1,0 +1,23 @@
+[Unit]
+Description=Sendspin Multi-Room Audio Client
+After=network-online.target NetworkManager-wait-online.service sound.target
+Wants=network-online.target NetworkManager-wait-online.service
+
+[Service]
+Type=simple
+User=stefanspangel
+Environment=PATH=/var/home/stefanspangel/.local/bin:/home/stefanspangel/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecCondition=/usr/bin/bash -lc 'command -v sendspin >/dev/null 2>&1'
+ExecStartPre=/usr/bin/bash -lc 'for i in {1..30}; do ip -4 route get 1.1.1.1 >/dev/null 2>&1 && exit 0; sleep 1; done; echo "sendspin: no IPv4 route available after 30s" >&2; exit 1'
+ExecStart=/usr/bin/bash -lc 'export XDG_RUNTIME_DIR="/run/user/$(id -u)"; exec sendspin daemon'
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+SupplementaryGroups=audio
+
+[Install]
+WantedBy=multi-user.target

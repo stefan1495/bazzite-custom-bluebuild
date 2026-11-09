@@ -1,0 +1,12 @@
+[Unit]
+Description=Add wheel users to docker group (first boot)
+After=local-fs.target
+ConditionPathExists=!/etc/cleav/docker-groups-done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/cleav-docker-groups
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
