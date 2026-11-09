@@ -9,7 +9,7 @@ dnf5 -y install \
   https://vencord.dev/download/vesktop/amd64/rpm \
   https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm \
   https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm \
-  https://github.com/stablyai/orca/releases/download/v1.4.251/orca-ide-1.4.251.x86_64.rpm \
+  https://github.com/stablyai/orca/releases/download/v1.4.255/orca-ide-1.4.255.x86_64.rpm \
   "$PROTON_PASS_URL" \
   /run/system-bridge.rpm \
   coolercontrol liquidctl code code-insiders ghostty docker-ce docker-ce-cli \
