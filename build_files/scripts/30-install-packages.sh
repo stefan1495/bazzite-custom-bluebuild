@@ -15,3 +15,6 @@ dnf5 -y install \
   coolercontrol liquidctl code code-insiders ghostty docker-ce docker-ce-cli \
   containerd.io docker-buildx-plugin docker-compose-plugin podman zsh autofs syncthing \
   google-noto-emoji-color-fonts
+
+# Keep release lookup and archive installation out of the package list.
+python3 /ctx/helpers/install-waywallen-kde-plugin.py
