@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # renovate: datasource=custom.proton-pass depName=proton-pass versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)-(?<build>\d+)\.x86_64$
-PROTON_PASS_URL="https://proton.me/download/pass/linux/proton-pass-1.43.0-1.x86_64.rpm"
+PROTON_PASS_URL="https://proton.me/download/pass/linux/proton-pass-1.43.1-1.x86_64.rpm"
 
 dnf5 -y install \
   'https://discord.com/api/download?platform=linux&format=rpm' \
