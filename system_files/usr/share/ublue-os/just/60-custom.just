@@ -16,4 +16,4 @@ cleav-install-orca:
         https://github.com/stablyai/orca/releases/latest/download/orca-linux.AppImage \
         --output "$appimage"
     chmod +x "$appimage"
-    flatpak run it.mijorus.gearlever --integrate "$appimage"
+    printf 'y\n' | flatpak run it.mijorus.gearlever --integrate "$appimage"
