@@ -1,3 +1,15 @@
+# Enable Sendspin CLI as its dedicated, unprivileged system service.
+cleav-enable-sendspin:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    sudo systemd-sysusers
+    sudo systemctl daemon-reload
+    if sudo systemctl is-enabled --quiet sendspin.service; then
+        sudo systemctl disable --now sendspin.service
+    fi
+    sudo systemctl enable --now sendspin-cli.service
+
 # Install Orca's AppImage and let Gear Lever manage its integration.
 cleav-install-orca:
     #!/usr/bin/env bash
