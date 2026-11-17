@@ -14,5 +14,6 @@ printf '%s  %s\n' "$EXPECTED_SHA256" "$workdir/$ARCHIVE" | sha256sum --check --s
 
 tar -xzf "$workdir/$ARCHIVE" \
   --directory / \
+  --strip-components=1 \
   --no-same-owner \
   "sendspin-cli-${VERSION}-linux-x86_64/usr/local"
