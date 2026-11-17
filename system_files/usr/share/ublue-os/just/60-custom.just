@@ -1,14 +1,25 @@
-# Enable Sendspin CLI as its dedicated, unprivileged system service.
+# Enable Sendspin CLI as a user service with per-user configuration.
 cleav-enable-sendspin:
     #!/usr/bin/env bash
     set -euo pipefail
 
-    sudo systemd-sysusers
-    sudo systemctl daemon-reload
-    if sudo systemctl is-enabled --quiet sendspin.service; then
+    config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/sendspin-cli"
+    config_file="$config_dir/config"
+    mkdir -p "$config_dir"
+    if [[ ! -e "$config_file" ]]; then
+        install -m 0644 /usr/local/share/doc/sendspin-cli/sendspin-cli.conf.example "$config_file"
+    fi
+
+    if sudo systemctl is-enabled --quiet sendspin-cli.service || sudo systemctl is-active --quiet sendspin-cli.service; then
+        sudo systemctl disable --now sendspin-cli.service
+    fi
+    if sudo systemctl is-enabled --quiet sendspin.service || sudo systemctl is-active --quiet sendspin.service; then
         sudo systemctl disable --now sendspin.service
     fi
-    sudo systemctl enable --now sendspin-cli.service
+
+    systemctl --user daemon-reload
+    systemctl --user enable --now sendspin-cli.service
+    printf 'Sendspin user config: %s\n' "$config_file"
 
 # Install Orca's AppImage and let Gear Lever manage its integration.
 cleav-install-orca:

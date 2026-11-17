@@ -1,0 +1,20 @@
+[Unit]
+Description=Sendspin audio player
+Documentation=https://github.com/Sendspin/sendspin-cpp-cli
+After=pipewire.service pipewire-pulse.service pulseaudio.service
+
+[Service]
+Type=simple
+NoNewPrivileges=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+ExecStart=/usr/local/bin/sendspin-cli
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
