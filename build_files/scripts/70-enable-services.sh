@@ -2,7 +2,6 @@
 set -euo pipefail
 
 systemctl enable \
-  sendspin.service \
   coolercontrold.service \
   docker.socket \
   podman.socket \

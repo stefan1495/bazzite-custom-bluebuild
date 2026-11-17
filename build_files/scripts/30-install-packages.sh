@@ -13,7 +13,9 @@ dnf5 -y install \
   /run/system-bridge.rpm \
   coolercontrol liquidctl code code-insiders ghostty docker-ce docker-ce-cli \
   containerd.io docker-buildx-plugin docker-compose-plugin podman zsh autofs syncthing \
+  alsa-lib portaudio pulseaudio-libs pipewire-libs avahi-compat-libdns_sd \
   google-noto-emoji-color-fonts
 
 # Keep release lookup and archive installation out of the package list.
 python3 /ctx/helpers/install-waywallen-kde-plugin.py
+bash /ctx/helpers/install-sendspin-cli.sh
