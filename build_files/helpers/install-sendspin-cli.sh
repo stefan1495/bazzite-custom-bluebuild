@@ -22,6 +22,6 @@ payload="$extract_dir/sendspin-cli-${VERSION}-linux-x86_64/usr/local"
 test -x "$payload/bin/sendspin-cli"
 test -f "$payload/share/doc/sendspin-cli/sendspin-cli.conf.example"
 
-install -D -m 0755 "$payload/bin/sendspin-cli" /usr/local/bin/sendspin-cli
-install -d /usr/local/share/doc
-cp -a "$payload/share/doc/sendspin-cli" /usr/local/share/doc/
+install -D -m 0755 "$payload/bin/sendspin-cli" /usr/bin/sendspin-cli
+install -d /usr/share/doc
+cp -a "$payload/share/doc/sendspin-cli" /usr/share/doc/

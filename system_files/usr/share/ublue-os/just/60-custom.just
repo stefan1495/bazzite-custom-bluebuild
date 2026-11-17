@@ -7,7 +7,7 @@ cleav-enable-sendspin:
     config_file="$config_dir/config"
     mkdir -p "$config_dir"
     if [[ ! -e "$config_file" ]]; then
-        install -m 0644 /usr/local/share/doc/sendspin-cli/sendspin-cli.conf.example "$config_file"
+        install -m 0644 /usr/share/doc/sendspin-cli/sendspin-cli.conf.example "$config_file"
     fi
 
     if sudo systemctl is-enabled --quiet sendspin-cli.service || sudo systemctl is-active --quiet sendspin-cli.service; then
