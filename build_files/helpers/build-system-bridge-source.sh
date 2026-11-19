@@ -2,7 +2,7 @@
 set -euo pipefail
 
 version="${1:?usage: build-system-bridge-source.sh VERSION}"
-source_pin=5.9.5@7cba6b795549c3d24202290cd752314a23055dc5
+source_pin=5.30.0@b719ed05d731aef7d1600febd836a88b16de561d
 pinned_version="${source_pin%@*}"
 commit="${source_pin#*@}"
 if [[ "${version}" != "${pinned_version}" ]]; then
