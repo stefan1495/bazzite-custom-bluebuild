@@ -40,3 +40,23 @@ cleav-install-orca:
         --output "$appimage"
     chmod +x "$appimage"
     printf 'y\n' | flatpak run it.mijorus.gearlever --integrate "$appimage"
+
+# Install Vesktop's AppImage and let Gear Lever manage its integration.
+cleav-install-vesktop:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    if ! flatpak info it.mijorus.gearlever >/dev/null 2>&1; then
+        echo "Gear Lever Flatpak (it.mijorus.gearlever) is not installed." >&2
+        exit 1
+    fi
+
+    temp_dir="$(mktemp -d)"
+    trap 'rm -rf "$temp_dir"' EXIT
+
+    appimage="$temp_dir/Vesktop.AppImage"
+    curl --fail --location --silent --show-error --proto-redir '=https' \
+        https://vencord.dev/download/vesktop/amd64/appimage \
+        --output "$appimage"
+    chmod +x "$appimage"
+    printf 'y\n' | flatpak run it.mijorus.gearlever --integrate "$appimage"
