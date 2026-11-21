@@ -16,5 +16,6 @@ dnf5 -y install \
   google-noto-emoji-color-fonts
 
 # Keep release lookup and archive installation out of the package list.
+bash /ctx/helpers/install-serein.sh
 python3 /ctx/helpers/install-waywallen-kde-plugin.py
 bash /ctx/helpers/install-sendspin-cli.sh
