@@ -6,7 +6,6 @@ PROTON_PASS_URL="https://proton.me/download/pass/linux/proton-pass-1.44.0-1.x86_
 
 dnf5 -y install \
   'https://discord.com/api/download?platform=linux&format=rpm' \
-  https://vencord.dev/download/vesktop/amd64/rpm \
   https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm \
   https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm \
   "$PROTON_PASS_URL" \

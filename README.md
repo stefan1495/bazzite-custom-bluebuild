@@ -32,7 +32,9 @@ The image runs numbered build steps under [`build_files/scripts/`](build_files/s
 - `com.orcaslicer.OrcaSlicer`
 - `me.amankhanna.opendeck`
 
-Proton Pass, Orca IDE, and System Bridge RPM versions are managed by Renovate in `build_files/scripts/30-install-packages.sh`, using the custom managers in [`renovate.json`](renovate.json).
+Proton Pass and System Bridge RPM versions are managed by Renovate using the custom managers in [`renovate.json`](renovate.json).
+
+Orca IDE and Vesktop are optional AppImages, not bundled RPMs. With the Gear Lever Flatpak (`it.mijorus.gearlever`) installed, run `ujust cleav-install-orca` or `ujust cleav-install-vesktop` on the running image to install and integrate the app for your user.
 
 ## Verification
 
